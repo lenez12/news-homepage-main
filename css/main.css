@@ -1,0 +1,424 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  background-color: white;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: hsl(240deg, 100%, 5%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*==================== LAYOUT ====================*/
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  background-color: gray;
+  color: white;
+  letter-spacing: 5px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+.btn.btn-primary {
+  background-color: hsl(5deg, 85%, 63%);
+}
+.btn.btn-primary:hover {
+  background-color: hsl(240deg, 100%, 5%);
+}
+
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+.header .nav {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem 1rem;
+}
+.header .nav .nav-brand a img {
+  height: 1.5rem;
+}
+.header .nav .menu-overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.header .nav .menu-overlay.open {
+  display: block;
+}
+.header .nav .navigation {
+  position: relative;
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  width: 67%;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+  box-shadow: 2px 2px 10px gray;
+  z-index: 100;
+  display: none;
+}
+.header .nav .navigation.open {
+  display: block;
+}
+.header .nav .navigation .close-icon {
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+}
+.header .nav .navigation .nav-menu {
+  padding-top: 10rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.header .nav .navigation .nav-menu a {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  color: black;
+}
+.header .nav .navigation .nav-menu a:hover {
+  color: hsl(35deg, 77%, 62%);
+}
+
+.main .hero {
+  margin-bottom: 2rem;
+}
+.main .hero img {
+  width: 100%;
+}
+.main .hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.main .hero .hero-description p {
+  line-height: 1.8rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: hsl(236deg, 13%, 42%);
+}
+.main .hero .hero-description a {
+  color: white;
+  margin-bottom: 2rem;
+}
+.main .hero .recent-article {
+  background-color: hsl(240deg, 100%, 5%);
+  padding: 1.5rem;
+}
+.main .hero .recent-article h2 {
+  color: hsl(35deg, 77%, 62%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.main .hero .recent-article .new-item.border-bottom {
+  border-bottom: 1px solid hsl(236deg, 13%, 42%);
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+.main .hero .recent-article .new-item h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.main .hero .recent-article .new-item h3:hover {
+  color: hsl(35deg, 77%, 62%);
+  cursor: pointer;
+}
+.main .hero .recent-article .new-item p {
+  color: hsl(233deg, 8%, 79%);
+  line-height: 1.8rem;
+  font-size: 14px;
+}
+.main .features {
+  flex-direction: column;
+}
+.main .features .feature-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+.main .features .feature-item .feature-image-description {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  flex: 1;
+}
+.main .features .feature-item img {
+  max-height: 100%;
+  max-width: 100px;
+  flex-grow: 2;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .features .feature-item h2 {
+  font-size: 2.2rem;
+  color: hsl(233deg, 8%, 79%);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.main .features .feature-item h3 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: hsl(240deg, 100%, 5%);
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.main .features .feature-item h3:hover {
+  color: hsl(5deg, 85%, 63%);
+  cursor: pointer;
+}
+.main .features .feature-item p {
+  font-size: 1rem;
+  color: hsl(236deg, 13%, 42%);
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 1250px) {
+  .section {
+    padding: 0 6rem;
+    box-sizing: border-box;
+  }
+  .header {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .header .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.5rem 6rem 0;
+    background-color: white;
+    width: 100%;
+    max-width: 1440px;
+  }
+  .header .nav .nav-brand a img {
+    height: 2.5rem;
+  }
+  .header .nav .toggle-menu {
+    display: none;
+  }
+  .header .nav .menu-overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .header .nav .menu-overlay.open {
+    display: none;
+  }
+  .header .nav .navigation {
+    position: static;
+    background-color: white;
+    height: auto;
+    width: auto;
+    top: 0;
+    right: 0;
+    padding: 0;
+    box-shadow: 2px 2px 10px transparent;
+    z-index: 100;
+    display: flex;
+    justify-content: end;
+  }
+  .header .nav .navigation.open {
+    display: block;
+  }
+  .header .nav .navigation .close-icon {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+    display: none;
+  }
+  .header .nav .navigation .nav-menu {
+    padding-top: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  .header .nav .navigation .nav-menu a {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    display: block;
+  }
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .main .hero {
+    margin-bottom: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "hero-image hero-image recent-article" "title description recent-article";
+  }
+  .main .hero img {
+    grid-area: hero-image;
+    content: url("../assets/images/image-web-3-desktop.jpg");
+  }
+  .main .hero h1 {
+    grid-area: title;
+    font-size: 3.7rem;
+    font-weight: 800;
+  }
+  .main .hero .hero-description {
+    grid-area: description;
+  }
+  .main .hero .hero-description p {
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: hsl(236deg, 13%, 42%);
+  }
+  .main .hero .hero-description a {
+    color: white;
+    margin-bottom: 2rem;
+  }
+  .main .hero .recent-article {
+    grid-area: recent-article;
+    background-color: hsl(240deg, 100%, 5%);
+    padding: 1.5rem;
+  }
+  .main .hero .recent-article h2 {
+    color: hsl(35deg, 77%, 62%);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  .main .hero .recent-article .new-item {
+    min-width: 350px;
+  }
+  .main .hero .recent-article .new-item.border-bottom {
+    border-bottom: 1px solid hsl(236deg, 13%, 42%);
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+  .main .hero .recent-article .new-item h3 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .main .hero .recent-article .new-item p {
+    color: hsl(233deg, 8%, 79%);
+    line-height: 1.8rem;
+    font-size: 18px;
+  }
+  .main .features {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 1440px;
+  }
+  .main .features .feature-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 0;
+    align-items: center;
+    height: auto;
+  }
+  .main .features .feature-item .feature-image-description {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .main .features .feature-item img {
+    max-height: 100%;
+    max-width: auto;
+    flex-grow: 2;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .main .features .feature-item h2 {
+    font-size: 2rem;
+    color: hsl(233deg, 8%, 79%);
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  .main .features .feature-item h3 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: hsl(240deg, 100%, 5%);
+    font-weight: bold;
+  }
+  .main .features .feature-item p {
+    font-size: 1.2rem;
+    color: hsl(236deg, 13%, 42%);
+    line-height: 1.7rem;
+  }
+}/*# sourceMappingURL=main.css.map */
